@@ -1,12 +1,10 @@
-const http = require("http")
-let server =http.createServer(function (req, res) {
-    // This callback handles each incoming request.
-    //this sends the data:
-    res.write('Hello, FSD!!')
-
-    //This closes the connection:
-    res.end()
+let http = require('http')
+let server = http.createServer(function (req, res) {
+  res.writeHeader(206)
+  res.write('<h1>Bark!</h1><img src="https://httpstatusdogs.com/img/206.jpg" alt="206">')
+  res.end()
 })
-server.listen(3000, function(){
-    console.log("Server is live!")
-}) //3000 is a port number
+
+server.listen(3000, function () {
+  console.log('I am awake!')
+})
